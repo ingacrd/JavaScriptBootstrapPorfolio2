@@ -49,14 +49,15 @@ function changeColor(color) {
     else{
         elements.forEach(function(element) {
             element.classList.remove('custom-background-green');    
+            element.classList.remove('custom-background-indigo');  
             element.classList.remove('custom-background-red');
         });
-                elementsHover.forEach(function(element) {
+        elementsHover.forEach(function(element) {
             element.classList.remove('custom-hover-green');
             element.classList.remove('custom-hover-indigo');
         });
         elementsColor.forEach(function(element){
-            element.classList.removetoggle('custom-primary-indigo');
+            element.classList.remove('custom-primary-indigo');
             element.classList.remove('custom-primary-green');
         });
         elementsBoxShadow.forEach(function(element){
