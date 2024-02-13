@@ -12166,12 +12166,23 @@ textarea.form-control-lg {
   position: absolute;
   left: 0;
   right: 0;
-  top: 50%;
+  top: 30%;
   bottom: 0;
   margin: auto;
   text-align: center;
   font-weight: bold;
   font-size: 20px;
+}
+.services .icon-square span {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 60%;
+  bottom: 0;
+  margin: auto;
+  text-align: center;
+  font-weight: bold;
+  font-size: 12px;
 }
 .services .icon-square .fa-brands {
   font-size: 80px;
