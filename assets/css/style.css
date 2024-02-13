@@ -12337,6 +12337,9 @@ textarea.form-control-lg {
   text-decoration: none;
   text-transform: capitalize;
 }
+.form .error-txt {
+  display: none;
+}
 
 .footer {
   padding-top: 1rem;

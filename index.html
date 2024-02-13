@@ -9,6 +9,15 @@
     <link rel="stylesheet" href="assets/css/fontawesome.css">
     <link rel="stylesheet" href="assets/vendors/css/glightbox.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"> 
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init({
+          publicKey: "PAI74OelKf6CBIH4W",
+        });
+      })();
+    </script>
+   
 
 </head>
 <body>
@@ -120,7 +129,7 @@
             <img class="iconb" src="images/csharp.png">
           </div>
           <p>C#</p>
-          <span>.NET, ASP.NET, ADO.NET</span>
+          <span>.NET, ASP.NET, ADO.NET, LINQ</span>
         </div>
       </div>
       <div>
@@ -770,35 +779,31 @@
             drive results and contribute to the success of your company.
 
           </p>
-          <!-- <h3 class="display-3--brief">What will be the next step?</h3> -->
-          <!-- <ul class="cta-info__list">
-            <li>My entrepreneurial journey as a business owner of a WordPress e-commerce venture has honed my abilities in automation,
-            time management, and organizational skills.</li>
-            <li>My commitment to continuous learning, coupled with qualities like empathy, positive attitude, and effective
-            communication, make me a valuable asset to any team.</li>
-            <li>I am not just a developer; I am a dedicated professional who brings a holistic skill set and a passion for innovation to
-            drive results and contribute to the success of your company.</li>
-          </ul> -->
+
         </div>
       </div>
       <div class="col-12 col-lg-6 bg-white shadow p-3">
         <div class="form w-100 pb-2">
           <h4 class="display-3--title mb-5">start your project</h4>
-          <form action="#" class="row">
+          <form action="#" id = "contact-form" class="row">
             <div class="col-lg-6 col-md mb-3">
-              <input type="text" placeholder="First Name" id="inputFirstName" class="shadow form-control form-control-lg">
+              <input type="text" placeholder="First Name" id="inputFirstName" class="shadow form-control form-control-lg" onkeyup="validate_fName()">
+              <p class="error-txt text-danger fs-6 " id="fName-feedback">First name can't be blank</p>
             </div>
             <div class="col-lg-6 col-md mb-3">
-              <input type="text" placeholder="Last Name" id="inputLastName" class="shadow form-control form-control-lg">
+              <input type="text" placeholder="Last Name" id="inputLastName" class="shadow form-control form-control-lg" onkeyup="validate_lName()">
+              <p class="error-txt text-danger fs-6" id="lName-feedback">Last name can't be blank</p>
             </div>
             <div class="col-lg-12 mb-3">
-              <input type="email" placeholder="email address" id="inputEmail" class="shadow form-control form-control-lg">
+              <input type="email" placeholder="email address" id="inputEmail" class="shadow form-control form-control-lg" onkeyup="validate_email()">
+              <p class="error-txt text-danger fs-6" id="email-feedback">Email can't be blank</p>
             </div>
             <div class="col-lg-12 mb-3">
-              <textarea name="message" placeholder="message" id="message" rows="8" class="shadow form-control form-control-lg"></textarea>
+              <textarea name="message" placeholder="message" id="message" rows="8" class="shadow form-control form-control-lg" onkeyup="validate_msg()"></textarea>
+              <p class="error-txt text-danger fs-6" id="msg-feedback">Message can't be blank</p>
             </div>
             <div class="text-center d-grid mt-1">
-              <button type="button" class="btn btn-primary rounded-pill pt-3 pb-3 change-primary-color">
+              <button type="button" class="btn btn-primary rounded-pill pt-3 pb-3 change-primary-color" onclick="sendEmail()" >
                 submit
                 <i class="fas fa-paper-plane"></i>
               </button>
@@ -912,5 +917,6 @@
 
   <script src="assets/js/bootstrap.bundle.js"></script>
   <script src="assets/js/custom.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 </html>
